@@ -24,7 +24,7 @@ export default function Lesson12() {
     // действие, которое случится в форме по нажатию на кнопку с типом submit
     // за место values придут значения из формы
     onSubmit: (values: IFormValues, {resetForm}) => {
-      console.log(values)
+      //console.log(values)
       //console.log(formik)
       resetForm()
       navigate('/')

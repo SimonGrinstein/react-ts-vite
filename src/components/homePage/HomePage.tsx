@@ -3,13 +3,13 @@ import styles from "./homePage.module.css";
 import { useAuth } from "../../context/authContext";
 import MyButton from "../myButton/MyButton";
 
-interface NumberLessons {
-  number: number;
-}
+// interface NumberLessons {
+//   number: number;
+// }
 
-const NumberItem: React.FC<NumberLessons> = ({ number }) => {
-  return <div key={number}>{number}</div>;
-};
+// const NumberItem: React.FC<NumberLessons> = ({ number }) => {
+//   return <div key={number}>{number}</div>;
+// };
 
 const homeWorks: string[] = [
   "homework02",

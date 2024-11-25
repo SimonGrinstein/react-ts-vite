@@ -4,6 +4,7 @@ import MyInput from "../myInput/MyInput";
 import "./loginForm.css";
 import { useAuth } from "../../context/authContext";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
 
@@ -19,6 +20,8 @@ function LoginForm() {
       .required('password is required')
   });
 
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       username: 'emilys',
@@ -29,6 +32,7 @@ function LoginForm() {
     onSubmit: (values, {resetForm}) => {
       //console.log(values)
       resetForm()
+      navigate('/')
 
       fetch('https://dummyjson.com/auth/login', {
         method: 'POST',
@@ -43,8 +47,6 @@ function LoginForm() {
     }
   });
   
-  
-
   return (
     <form className="login-form" onSubmit={formik.handleSubmit}>
       <MyInput onChange={formik.handleChange} value= {formik.values.username} name={"username"}  type={"text"} label={"Type your username"} placeholder={"login"} />
