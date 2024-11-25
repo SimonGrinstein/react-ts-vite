@@ -40,7 +40,7 @@ import { CartProvider } from "./context/cartContext";
 import Cart from "./components/cart/Cart";
 import StorePage from "./lessons/lesson16/components/storePage/StorePage";
 import Lesson17 from './lessons/lesson17/Lesson17.tsx';
-import Lesson18 from './lessons/lesson18 copy/Lesson18.tsx';
+import Lesson18 from './lessons/lesson18/Lesson18.tsx';
 import LoginForm from './components/loginForm/LoginForm.tsx';
 import { AuthProvider } from './context/authContext.tsx';
 

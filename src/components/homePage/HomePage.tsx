@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./homePage.module.css";
 import { useAuth } from "../../context/authContext";
+import MyButton from "../myButton/MyButton";
 
 interface NumberLessons {
   number: number;
@@ -48,7 +49,10 @@ export default function HomePage() {
       </div>
       </>
     ) : (
-      <></>
+      <div className="lesson-container">
+        <h2>Для просмотра уроков необходимо авторизоваться.</h2>
+        <Link to="/login"><MyButton text="LOGIN" isDanger ={false} /></Link>
+      </div>
     )}
       
     </>

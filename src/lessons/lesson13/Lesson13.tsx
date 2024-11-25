@@ -38,7 +38,7 @@ export default function Lesson13() {
     validateOnChange: false,
     validationSchema: schema,
     onSubmit: (values: IFormValues, {resetForm}) => {
-      console.log(values)
+      //console.log(values)
       resetForm()
      }
   });
