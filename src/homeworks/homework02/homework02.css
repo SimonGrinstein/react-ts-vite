@@ -1,0 +1,22 @@
+.hw2-header {
+  background-color: #282c34;
+  min-height: 5px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.hw2-h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hw2-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+
+.img_schnecke {
+  width: 200px;
+}

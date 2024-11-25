@@ -1,0 +1,16 @@
+.formContainer{
+    margin: 10px;
+}
+.formContainer button{
+    margin: 0 10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 5px;
+    overflow-y: auto;
+    height: 100%;
+}
