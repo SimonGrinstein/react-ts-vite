@@ -34,6 +34,8 @@ export const AuthContext = createContext<IAuthContextType | undefined>(undefined
 export const AuthProvider = ({children}: {children: React.ReactNode}) => {
   const[user, setUser] = useState<IUser>(initialUser);
 
+  
+
   // const handleLogout = () => {
   //   setUser(React.SetStateAction<IUser>)
   // }
