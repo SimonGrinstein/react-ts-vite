@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 function LoginForm() {
 
   const { setUser } = useAuth();
-
+  
   const schema = Yup.object().shape({
     username: Yup
       .string()
@@ -31,9 +31,7 @@ function LoginForm() {
     validationSchema: schema,
     onSubmit: (values, {resetForm}) => {
       //console.log(values)
-      resetForm()
-      navigate('/')
-
+      
       fetch('https://dummyjson.com/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -43,7 +41,13 @@ function LoginForm() {
         })
       })
         .then(res => res.json())
-        .then(data => setUser(data));
+        .then(data => {
+          setUser(data)
+          resetForm()
+          //-- Сохранить данные в browser
+          localStorage.setItem('accessToken', data.accessToken)
+          navigate('/')
+        });
     }
   });
   

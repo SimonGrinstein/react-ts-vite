@@ -27,7 +27,7 @@ export default function HomePage() {
 
   return (
     <>
-    {user.accessToken ? (
+    {user.id ? (
       <>
         <div className={styles.gridLessonContainer}>
         {Array.from({ length: 16 }, (_, index) => index + 1).map(

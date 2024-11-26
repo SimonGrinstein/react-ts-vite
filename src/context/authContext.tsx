@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 interface IUser {
   accessToken: string;
@@ -12,7 +12,7 @@ interface IUser {
   username: string;
 }
 
-const initialUser:IUser = {
+export const initialUser:IUser = {
   accessToken: "",
   email: "",
   firstName: "",
@@ -34,11 +34,29 @@ export const AuthContext = createContext<IAuthContextType | undefined>(undefined
 export const AuthProvider = ({children}: {children: React.ReactNode}) => {
   const[user, setUser] = useState<IUser>(initialUser);
 
-  
+
 
   // const handleLogout = () => {
   //   setUser(React.SetStateAction<IUser>)
   // }
+
+  const accessToken = localStorage.getItem('accessToken');
+  
+  useEffect (() =>{
+    if (accessToken) {
+      fetch('https://dummyjson.com/auth/me', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${accessToken}`
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        setUser(data)
+        console.log(data)
+      });
+    }
+  },[])
 
   return (
     <AuthContext.Provider value={{user, setUser}}>

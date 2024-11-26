@@ -43,6 +43,7 @@ import Lesson17 from './lessons/lesson17/Lesson17.tsx';
 import Lesson18 from './lessons/lesson18/Lesson18.tsx';
 import LoginForm from './components/loginForm/LoginForm.tsx';
 import { AuthProvider } from './context/authContext.tsx';
+import ProtectedRoute from './components/protectedRoute/ProtectedRoute.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <CartProvider>
@@ -51,7 +52,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="fetch-dog" element={<FetchDog />} />
+          <Route path="fetch-dog" element={<ProtectedRoute outlet={<FetchDog />} />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="hero-gallery" element={<HeroGallery />} />
           <Route path="products" element={<Products />} />
